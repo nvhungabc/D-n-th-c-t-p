@@ -1,9 +1,4 @@
-/*
-Template: Booksto - Responsive Bootstrap 4 Admin Dashboard Template
-Author: iqonicthemes.in
-Design and Developed by: iqonicthemes.in
-NOTE: This file contains the styling for responsive Template.
-*/
+
 @media(max-width:1980px) {
 	.iq-scrollable-block { overflow-x: hidden; overflow-y: scroll; height: 390px; }
 }
