@@ -22,7 +22,7 @@ class UserController extends Controller
             User::where('id', $request->id)->update(['status'=> 0]);
             return response()->json(['status'=> 200,'msg'=> 'Đã khóa tài khoản']);
         }
-        // return back()->with('success','Cập nhật thành công');
+       
     }
 
     public function updateRole(Request $request){
@@ -34,7 +34,7 @@ class UserController extends Controller
             User::where('id', $request->id)->update(['role'=> 0]);
             return response()->json(['status'=> 200,'msg'=> 'Đã xóa quyền Admin của tài khoản']);
         }
-        // return back()->with('success','Cập nhật thành công');
+       
     }
-    //
+   
 }

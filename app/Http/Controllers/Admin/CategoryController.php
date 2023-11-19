@@ -12,17 +12,17 @@ class CategoryController extends Controller
 {
     public function category(){
         $categories = Category::all();
-        // dd($categories);
+   
         return view('content.admin.category.category', compact('categories'));
     }
 
     public function add(CategoryRequests $request){
-        // dd($request);
+    
 
         if($request->isMethod('POST')){
 
             $params = $request->except('_token');
-            // dd($params);
+   
 
             $category = Category::create($params);
             if($category->id){

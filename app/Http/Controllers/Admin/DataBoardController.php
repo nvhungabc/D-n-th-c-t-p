@@ -20,7 +20,7 @@ class DataBoardController extends Controller
         $orderInfo = DB::table('orders')
         ->join('users', 'users.id', '=','orders.user_id')
         ->get();
-        // dd($orderInfo);
+     
         return view('content.admin.databoard', compact('countUser', 'countBook', 'countOrder', 'Sum_sale', 'orderInfo'));
     }
     //

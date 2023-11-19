@@ -34,7 +34,7 @@ class ReviewController extends Controller
         ->select('reviews.*','books.bookName','users.full_name')
         ->orderBy('reviews.created_at','desc')
         ->get();
-        // dd($comments);
+       
         return view('content.admin.comments.comments', compact('comments'));
     }
 

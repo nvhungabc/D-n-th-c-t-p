@@ -21,7 +21,7 @@ class BooksController extends Controller
         ->whereNull('books.deleted_at')
         ->select('books.*','authors.name as authorName','categories.name as categoryName')
         ->get();
-        // dd($books);
+    
         return view('content.admin.books.books', compact('books'));
     }
 
@@ -36,7 +36,7 @@ class BooksController extends Controller
                 $params['image'] = uploadFile('images', $request->file('image'));
             }
             $newBook = Books::create($params);
-            // dd($newBook->id);
+       
 
             if($newBook->id){
                 Session::flash('success', 'Thêm sách thành công!');
@@ -48,7 +48,7 @@ class BooksController extends Controller
 
     public function remove($id){
         $book = Books::find($id);
-        // dd($book);
+
         if($book){
             Storage::delete('/public/'.$book->image);
             Books::where('id', $id)->delete();
@@ -68,7 +68,7 @@ class BooksController extends Controller
         $categories = Category::all();
         $authors = Authors::all();
 
-        // dd($book);
+
 
         if($request->isMethod('POST')){
             $params = $request->except('_token');

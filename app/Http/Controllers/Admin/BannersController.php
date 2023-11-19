@@ -17,7 +17,6 @@ class BannersController extends Controller
 
     public function add(Request $request){
         if($request->isMethod('POST')){
-            // dd($request->file('images'));
             if($request->hasFile('images')){
                 foreach($request->file('images') as $image){
                     $imageName = 'images/'.time().'_'.$image->getClientOriginalName();
@@ -26,8 +25,6 @@ class BannersController extends Controller
                         'images' => $imageName
                     ]);
                 }
-                // dd($images);
-
                 if($newBanner){
                     Session::flash('success', 'Thêm mới thành công!');
                     return redirect()->route('adminBanners');
